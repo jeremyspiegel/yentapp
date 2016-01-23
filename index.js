@@ -73,7 +73,7 @@ yents.push({
 
 var commentingTools = require('./comments');
 
-setInterval(poll, 1000);
+//setInterval(poll, 1000);
 
 function poll() {
   for (var i = 0; i < yents.length; ++i) {
