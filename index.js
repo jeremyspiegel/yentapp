@@ -31,11 +31,11 @@ app.post('/mothers', bodyParser.urlencoded({extended: false}), function(req, res
     });
 });
 
-app.get('/child-of/:id', function(req, res) {
-  res.sendFile(__dirname + '/public/child-of.html');
+app.get('/child-signup/:id', function(req, res) {
+  res.sendFile(__dirname + '/public/child-signup.html');
 });
 
-app.post('/child-of/:id', bodyParser.urlencoded({extended: false}), function(req, res) {
+app.post('/child-signup/:id', bodyParser.urlencoded({extended: false}), function(req, res) {
   var accessToken = req.body.access_token;
   if (accessToken === undefined) {
     return res.status(400).end('missing access token');
