@@ -4,33 +4,32 @@
   <meta charset="UTF-8">
   <title>Yentapp</title>
   <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <style>
+    #invite-another {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <div id="fb-root"></div>
 <script>
   window.fbAsyncInit = function() {
-    $('#signup').click(function() {
-      var scope = [
-        'email',
-        'public_profile',
-        'publish_actions',
-        'user_friends',
-        'user_posts'
-      ];
+    FB.getLoginStatus(function(res) {
+      if (res.status !== 'connected') {
+        return;
+      }
       
-      FB.login(afterLogin, {scope: scope.join(',')});
+      FB.api('me', function(me) {
+        $('#invite-another').click(function() {
+          inviteAnother(me);
+        });
+        
+        $('#invite-another').show();
+      });
     });
   };
   
-  function afterLogin(res) {
-    if (FB.getAccessToken()) {
-      $.post('/mothers', {access_token: FB.getAccessToken()}, afterCreate);
-    } else {
-      alert('login failed');
-    }
-  }
-  
-  function afterCreate(mom) {
+  function inviteAnother(mom) {
     var url = 'https://www.facebook.com/dialog/send' +
       '?app_id=1667081833550968' +
       '&link=' + encodeURIComponent('https://yentapp.herokuapp.com/child-signup/' + mom.id) +
@@ -47,6 +46,7 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 </script>
-<a id="signup" href="#">Signup</a>
+Smothering Activated. We will take care of your darlings. Go treat yourself for once.
+<a id="invite-another" href="#">Invite another child</a>
 </body>
 </html>
