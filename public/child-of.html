@@ -4,11 +4,6 @@
   <meta charset="UTF-8">
   <title>Yentapp</title>
   <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-  <style>
-    #invite-button {
-      display: none;
-    }
-  </style>
 </head>
 <body>
 <div id="fb-root"></div>
@@ -28,7 +23,7 @@
   function afterFBLogin() {
     FB.getLoginStatus(function(res) {
       if (res.status === 'connected') {
-        $.post('/mothers', {access_token: FB.getAccessToken()}, afterCreateMom);
+        $.post(window.location.pathname, {access_token: FB.getAccessToken()}, afterCreateMom);
       } else if (res.status === 'not_authorized') {
         $('#status').html('Please log into Yentapp.');
       } else {
@@ -38,22 +33,7 @@
   }
   
   function afterCreateMom(user) {
-    $('#status').html('Hello, ' + user.name);
-    
-    $('#invite-button').click(function() {
-      inviteChild(user.id);
-    });
-    
-    $('#invite-button').show();
-  }
-  
-  function inviteChild(momId) {
-    var url = 'https://www.facebook.com/dialog/send' +
-      '?app_id=1667081833550968' +
-      '&link=' + encodeURIComponent('http://www.yentapp.xyz/child-signup/' + momId) +
-      '&redirect_uri=' + encodeURIComponent('http://localhost:5000');
-    
-    window.location = url;
+    $('#status').html('Thank you, ' + user.name + '. Your mother loves you.');
   }
 </script>
 
@@ -64,9 +44,8 @@
   data-onlogin="afterFBLogin"
   data-show-faces="false"
   data-auto-logout-link="false"
-  scope="email,public_profile,user_friends,publish_actions,user_posts"></div>
+  scope="user_friends,user_about_me,user_actions.books,user_actions.fitness,user_actions.music,user_actions.news,user_actions.video,user_actions:{app_namespace},user_birthday,user_education_history,user_events,user_games_activity,user_hometown,user_likes,user_location,user_managed_groups,user_photos,user_posts,user_relationships,user_relationship_details,user_religion_politics,user_tagged_places,user_videos,user_website,user_work_history"></div>
   
 <div id="status"></div>
-<button id="invite-button">Invite child</button>
 </body>
 </html>

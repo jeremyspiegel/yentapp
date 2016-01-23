@@ -31,6 +31,10 @@ app.post('/mothers', bodyParser.urlencoded({extended: false}), function(req, res
     });
 });
 
+app.get('/child-of/:id', function(req, res) {
+  res.sendFile(__dirname + '/public/child-of.html');
+});
+
 app.post('/child-of/:id', bodyParser.urlencoded({extended: false}), function(req, res) {
   var accessToken = req.body.access_token;
   if (accessToken === undefined) {
@@ -45,7 +49,8 @@ app.post('/child-of/:id', bodyParser.urlencoded({extended: false}), function(req
   fb.getMe(accessToken)
     .then(function(user) {
       db.createChild(user.id, accessToken);
-      db.addChild(mom, user.id);
+      db.addChild(req.params.id, user.id);
+      res.json(user);
     })
     .catch(function(err) {
       console.error(err);
