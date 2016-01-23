@@ -2,7 +2,7 @@
 var map = {
     'end of relationship':
         `Excellent news! He was not nearly good enough for my daughter. I've already set you up on JDate.  ` +
-        `Profile name is HotandReadytoBreed.  Check is out boys http://jdate/HotandReadytoBreed`,
+        `Profile name is HotandReadytoBreed.  Check it out boys http://jdate/HotandReadytoBreed`,
     'in an open relationship':
         'Are you trying to kill your mother?  What is Suzie Schwartz going to think?',
     'soulcycle':
@@ -18,9 +18,13 @@ var map = {
     'yoga':
         `I see you have time to lie around on the ground with a bunch of strangers like an animal but no time to call your mother.`,
     'got a tattoo':
-        `You really are trying to kill me.  I'm telling your father. #FEH!`,
-    'Mojave Desert':
+        `http://38.media.tumblr.com/tumblr_lz26h9ui4T1qmje5a.gif`,
+    'mojave desert':
         `Did you bring a sweater?  You know how cold it can get at night!`,
+    'nordstrom':
+        `Hold on, Ms. Rockefeller!  I have a coupon!`,
+    'surface of the sun':
+        'Did you bring a sweater?  It can get at night!',
 };
 
 module.exports = map;
