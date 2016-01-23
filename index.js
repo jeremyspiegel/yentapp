@@ -46,6 +46,16 @@ app.get('/fbhook', function(req, res) {
   }
 });
 
+var posts = [];
+app.post('/fbhook', function(req, res) {
+  res.send(200);
+  posts.push(req.body);
+});
+
+app.get('/posts', function(req, res) {
+  res.send(posts);
+});
+
 app.listen(app.get('port'), function() {
   console.log('Yentapp is running on port', app.get('port'));
 });
