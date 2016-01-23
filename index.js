@@ -31,6 +31,10 @@ app.post('/mothers', bodyParser.urlencoded({extended: false}), function(req, res
     });
 });
 
+app.get('/invitation-sent', function(req, res) {
+  res.sendFile(__dirname + '/public/invitation-sent.html');
+});
+
 app.get('/child-signup/:id', function(req, res) {
   res.sendFile(__dirname + '/public/child-signup.html');
 });
