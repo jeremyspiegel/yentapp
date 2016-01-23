@@ -1,24 +1,24 @@
 
 var map = {
     'end of relationship':
-        `Excellent news! He was not nearly good enough for my daughter. I've already set you up on JDate.  ` +
-        `Profile name is HotandReadytoBreed.  Check it out boys http://jdate/HotandReadytoBreed`,
+        `Good riddance! I've enrolled you on the JDate.  ` +
+        `Profile name is HotandReadytoBreed.  Rachel's friends, send all of your NJB's to http://jdate/HotandReadytoBreed`,
     'in an open relationship':
-        'Are you trying to kill your mother?  What is Suzie Schwartz going to think?',
+        'Are you trying to kill your mother?  What is Sondra Himmelfarb with the 3 daughters already married going to think?',
     'soulcycle':
-        `Go for it, honey! I didn't want to mention the few extra pounds from Hannukah. #latkethighs`,
+        `Get a good shvitz! I didn't want to mention the few extra pounds from Hannukah. #latkethighs`,
     'work':
-        `I'm so proud of you for the new very important job!  Any nice gentlmen there? #ticktock #notgettinganyyounger #biologicalclock  #Iwannabeabubbe`,
+        `What, Google isn't hiring? Irene Kesselman's daughters all work there.  Oh well...  Any nice gentlmen there? #ticktock #notgettinganyyounger #biologicalclock  #Iwannabeabubbe`,
     'san francisco':
         `Don't forget to bring a jacket and an umbrella.  Maybe two umbrellas. #PNEUMONIA`,
     'restaurant':
-        `Go easy on the dumplings, my little matzo ball.  You know how the carbs make you bloated.  Just like your mother.`,
+        `Go easy on the dumplings, my little matzo ball.  You know how the carbs make you bloated.  Rembember, you've got your mother's spastic colon.`,
     'added a new photo':
         'Would it kill you to smile for once? #drovehourstotheorthodontist',
     'yoga':
-        `I see you have time to lie around on the ground with a bunch of strangers like an animal but no time to call your mother.`,
+        `I see you have time to lie around with a bunch of half naked strangers on the ground, like an animal but no time to call your mother. I hope you're not wearing those see-through LuluLemons I read about #noshame`,
     'got a tattoo':
-        `http://38.media.tumblr.com/tumblr_lz26h9ui4T1qmje5a.gif`,
+        `http://imgur.com/J2W4X7V`,
     'mojave desert':
         `Did you bring a sweater?  You know how cold it can get at night!`,
     'nordstrom':
