@@ -1,0 +1,32 @@
+<manifest alg="2" build="2015.0.2.310" opt="true" iceEnabled="true" iceMarkupVersion="2" exportTarget="other" domain="yentapp.xyz" resolutions="1x" timestamp="1453589351082">
+  <folder name="css">
+    <file name="site_global.css" crc="4052507572"/>
+    <file name="index.css" crc="115764421" ref="index"/>
+    <file name="iefonts_index.css" crc="4204236837" ref="index"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="196614522" ref="index"/>
+    <file name="museutils.js" crc="275725342" ref="index"/>
+    <file name="pie.js" crc="3827607177" ref="index"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="185257658" ref="index"/>
+    <file name="jquery.scrolleffects.js" crc="206645848" ref="index"/>
+    <file name="jquery.watch.js" crc="3999102769" ref="index"/>
+  </folder>
+  <folder name="images">
+    <file name="shabbat3.jpg" crc="231742259" seo="true" ref="index"/>
+    <file name="jewish_living_jphone.jpg" crc="96059212" seo="true" ref="index"/>
+    <file name="off.png" crc="4137614313" ref="index"/>
+    <file name="unavailable.png" crc="4136258698" ref="index"/>
+    <file name="off_rollover.png" crc="125515327" ref="index"/>
+    <file name="off_mousedown.png" crc="4137614313" ref="index"/>
+    <file name="on-u478-on-fr.png" crc="3857947631" ref="index"/>
+    <file name="on_rollover-u478-on-r-fr.png" crc="4119381415" ref="index"/>
+    <file name="on_mousedown-u478-on-m-fr.png" crc="3857947631" ref="index"/>
+    <file name="kosher1-crop-u539.jpg" crc="513651701" ref="index"/>
+    <file name="loginyentappbutton.png" crc="73297265" seo="true" ref="index"/>
+    <file name="dollarphotoclub_11005168.jpg" crc="3938336765" ref="index"/>
+    <file name="signupyentappbutton.png" crc="271618954" seo="true" ref="index"/>
+    <file name="shavuot_dance2.jpg" crc="67878053" ref="index"/>
+  </folder>
+  <file name="index.html" crc="4233250290" seo="true" mt="1453589315953" redirect="true"/>
+</manifest>
