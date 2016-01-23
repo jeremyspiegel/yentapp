@@ -4,10 +4,19 @@
   <meta charset="UTF-8">
   <title>Yentapp</title>
   <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <style>
+    #invite-button {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <div id="fb-root"></div>
 <script>
+  window.fbAsyncInit = function() {
+    afterFBLogin();
+  };
+
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -16,16 +25,10 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
   
-  function postAccessToken() {
-    $.post('/mothers', {access_token: FB.getAccessToken()}, function(res) {
-      $('#status').html('ok');
-    });
-  }
-  
-  function onlogin() {
+  function afterFBLogin() {
     FB.getLoginStatus(function(res) {
       if (res.status === 'connected') {
-        postAccessToken();
+        $.post('/mothers', {access_token: FB.getAccessToken()}, afterCreateMom);
       } else if (res.status === 'not_authorized') {
         $('#status').html('Please log into Yentapp.');
       } else {
@@ -33,17 +36,37 @@
       }
     });
   }
+  
+  function afterCreateMom(user) {
+    $('#status').html('Hello, ' + user.name);
+    
+    $('#invite-button').click(function() {
+      inviteChild(user.id);
+    });
+    
+    $('#invite-button').show();
+  }
+  
+  function inviteChild(momId) {
+    var url = 'https://www.facebook.com/dialog/send' +
+      '?app_id=1667081833550968' +
+      '&link=' + encodeURIComponent('http://www.yentapp.xyz/child-of/' + momId) +
+      '&redirect_uri=' + encodeURIComponent('http://localhost:5000');
+    
+    window.location = url;
+  }
 </script>
 
 <div
   class="fb-login-button"
   data-max-rows="1"
   data-size="xlarge"
-  data-onlogin="onlogin"
+  data-onlogin="afterFBLogin"
   data-show-faces="false"
   data-auto-logout-link="false"
   scope="email,public_profile,user_friends,publish_actions,user_posts"></div>
   
 <div id="status"></div>
+<button id="invite-button">Invite child</button>
 </body>
 </html>
