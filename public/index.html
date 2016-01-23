@@ -33,8 +33,8 @@
   function afterCreate(mom) {
     var url = 'https://www.facebook.com/dialog/send' +
       '?app_id=1667081833550968' +
-      '&link=' + encodeURIComponent('https://www.yentapp.xyz/child-signup/' + mom.id) +
-      '&redirect_uri=' + encodeURIComponent('https://www.yentapp.xyz/invite-child');
+      '&link=' + encodeURIComponent('https://yentapp.herokuapp.com/child-signup/' + mom.id) +
+      '&redirect_uri=' + encodeURIComponent('https://yentapp.herokuapp.com/invite-child');
     
     window.location = url;
   }
