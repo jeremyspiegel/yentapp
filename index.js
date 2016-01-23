@@ -13,9 +13,7 @@ function getError(res) {
 
 function getUserId(accessToken) {
   return new Promise(function(resolve, reject) {
-    fb.setAccessToken(accessToken);
-  
-    fb.api('me', 'get', function(res) {
+    fb.api('me', {access_token: accessToken}, function(res) {
       if (isError(res)) {
         reject(getError(res));
       } else {
