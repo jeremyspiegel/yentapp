@@ -1,0 +1,22 @@
+{
+  "name": "yentapp",
+  "version": "1.0.0",
+  "description": "Your loving Jewish mother.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "engines": {
+    "node": "5.5.0"
+  },
+  "keywords": [
+    "heroku"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeremyspiegel/yentapp"
+  }
+}
