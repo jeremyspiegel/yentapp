@@ -51,6 +51,24 @@ app.post('/child-of/:id', bodyParser.urlencoded({extended: false}), function(req
     });
 });
 
+app.get('/fbhook', function(req, res) {
+  if (req.param('hub.mode') === 'subscribe' && req.param('hub.verify_token') === 'token') {
+    res.send(req.param('hub.challenge'));
+  } else {
+    res.send(400);
+  }
+});
+
+var posts = [];
+app.post('/fbhook', function(req, res) {
+  res.send(200);
+  posts.push(req.body);
+});
+
+app.get('/posts', function(req, res) {
+  res.send(posts);
+});
+
 app.listen(app.get('port'), function() {
   console.log('Yentapp is running on port', app.get('port'));
 });
