@@ -33,9 +33,17 @@ app.post('/mothers', bodyParser.urlencoded({extended: false}), function(req, res
       res.json(info);
     })
     .catch(function(err) {
-      console.error(err.toString());
+      console.error(err);
       res.status(500).end('Facebook API request failed');
     });
+});
+
+app.get('/fbhook', function(req, res) {
+  if (req.param('hub.mode') === 'subscribe' && req.param('hub.verify_token') === 'token') {
+    res.send(req.param('hub.challenge'));
+  } else {
+    res.send(400);
+  }
 });
 
 app.listen(app.get('port'), function() {
