@@ -16,8 +16,8 @@
     }(document, 'script', 'facebook-jssdk'));
     
     function onlogin() {
-      $.post('/mothers', {
-        access_token: FB.getAccessToken()
+      $.post('/mothers', {access_token: FB.getAccessToken()}, function(res) {
+        document.write(JSON.stringify(res));
       });
     }
   </script>

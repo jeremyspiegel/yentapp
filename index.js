@@ -30,11 +30,14 @@ app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
 app.post('/mothers', bodyParser.urlencoded({extended: false}), function(req, res) {
-  res.end();
-  
-  getUserId(req.body.access_token).then(function(info) {
-    console.log(JSON.stringify(info));
-  });
+  getUserId(req.body.access_token)
+    .then(function(info) {
+      res.json(info);
+    })
+    .catch(function(err) {
+      console.error(err.toString());
+      res.status(500).end('Facebook API request failed');
+    });
 });
 
 app.listen(app.get('port'), function() {
