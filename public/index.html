@@ -7,10 +7,10 @@
   <script type="text/javascript">
    if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "jquery.musepolyfill.bgsize.js", "jquery.scrolleffects.js", "jquery.watch.js", "index.css"], "outOfDate":[]};
 </script>
-  
+
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
   <meta name="generator" content="2015.0.2.310"/>
-  <title>Musefree.com</title>
+  <title>Yentapp</title>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/site_global.css?4052507572"/>
   <link rel="stylesheet" type="text/css" href="css/index.css?115764421" id="pagesheet"/>
@@ -39,11 +39,11 @@ var __adobewebfontsappname__ = "muse";
         'user_friends',
         'user_posts'
       ];
-      
+
       FB.login(afterLogin, {scope: scope.join(',')});
     });
   };
-  
+
   function afterLogin(res) {
     if (FB.getAccessToken()) {
       $.post('/mothers', {access_token: FB.getAccessToken()}, afterCreate);
@@ -51,16 +51,16 @@ var __adobewebfontsappname__ = "muse";
       alert('login failed');
     }
   }
-  
+
   function afterCreate(mom) {
     var url = 'https://www.facebook.com/dialog/send' +
       '?app_id=1667081833550968' +
       '&link=' + encodeURIComponent('https://yentapp.xyz/child-signup/' + mom.id) +
       '&redirect_uri=' + encodeURIComponent('https://yentapp.xyz/invitation-sent');
-    
+
     window.location = url;
   }
-  
+
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;

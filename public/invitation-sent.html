@@ -5,12 +5,27 @@
   <title>Yentapp</title>
   <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
   <style>
+    h2 {
+        font-family: 'Verdana';
+        text-align: center;
+    }
+    div {
+        text-align: center;
+    }
+    .white {
+        background: rgba(241, 237, 237, 0.5);
+    }
+    .image {
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-image: url("./images/endPhoto.jpg");
+    }
     #invite-another {
       display: none;
     }
   </style>
 </head>
-<body>
+<body class="image">
 <div id="fb-root"></div>
 <script>
   window.fbAsyncInit = function() {
@@ -18,26 +33,26 @@
       if (res.status !== 'connected') {
         return;
       }
-      
+
       FB.api('me', function(me) {
         $('#invite-another').click(function() {
           inviteAnother(me);
         });
-        
+
         $('#invite-another').show();
       });
     });
   };
-  
+
   function inviteAnother(mom) {
     var url = 'https://www.facebook.com/dialog/send' +
       '?app_id=1667081833550968' +
       '&link=' + encodeURIComponent('https://yentapp.xyz/child-signup/' + mom.id) +
       '&redirect_uri=' + encodeURIComponent('https://yentapp.xyz/invitation-sent');
-    
+
     window.location = url;
   }
-  
+
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -46,7 +61,13 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 </script>
-Smothering Activated. We will take care of your darlings. Go treat yourself for once.
-<a id="invite-another" href="#">Invite another child</a>
+<div class="white">
+<h2>Smothering Activated. </h2>
+<h2>We will take care of your darling.</h2>
+<h2>Go treat yourself <em>for once</em>.</h2>
+</div>
+<div>
+<a id="invite-another" href="#"><h3>Invite another child</h3></a>
+</div>
 </body>
 </html>
