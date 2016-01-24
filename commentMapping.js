@@ -18,7 +18,7 @@ var map = {
     'yoga':
         `I see you have time to lie around with a bunch of half naked strangers on the ground, like an animal but no time to call your mother. I hope you're not wearing those see-through LuluLemons I read about #noshame`,
     'got a tattoo':
-        `https://s-media-cache-ak0.pinimg.com/236x/50/c8/e6/50c8e660f74df734f63c4edaede841e2.jpg`,
+        `💔💔💔💔💔💔💔`,
     'mojave desert':
         `Did you bring a sweater?  You know how cold it can get at night!`,
     'nordstrom':
