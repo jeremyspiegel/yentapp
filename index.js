@@ -72,7 +72,7 @@ app.listen(app.get('port'), function() {
 
 var commentingTools = require('./comments');
 
-setInterval(poll, 15000);
+setInterval(poll, 3000);
 
 function poll() {
   var yents = db.yents();
