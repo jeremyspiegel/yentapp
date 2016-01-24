@@ -10,8 +10,8 @@ var fb = require('./lib/fb');
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
-app.get('/yents', function(req, res) {
-  res.json(db.yents());
+app.get('/dumpdb', function(req, res) {
+  res.json(db.dump());
 });
 
 app.post('/mothers', bodyParser.urlencoded({extended: false}), function(req, res) {
