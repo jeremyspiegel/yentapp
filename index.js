@@ -70,19 +70,13 @@ app.listen(app.get('port'), function() {
   console.log('Yentapp is running on port', app.get('port'));
 });
 
-var yents = [];
-yents.push({
-  motherId: 108500652866978,
-  childId: 115174682198616,
-  motherToken: 'CAAXsM7yAFHgBAOTmJ0ELQalZCsKfLVpbJqHskKJxGHfEWyc9xynXU3ZBFBIxyffiaBSiEZArmqZAk9RktqZAZAPlJEXDvym4KTYGb9ZAQC8OFvo2U2G5o6W4iVhbU1ACqFZB8eiJCTpZBtuWD8kixjzFtOZB40GmKCPy0QkDZA8Uc4vzNg4ZBF7vPAO7gbxsybN4nSIsY17rnW4liAZDZD',
-  childToken: 'CAAXsM7yAFHgBAHkBbpFrcldLrQZCkZBlbcstBboIi1u8QwecPnZCkkFKHLJIlrcbLZCr0QmhCMhUyNEN4KdpEcPZAqPFX84XTBzGUcgRUxgiHNSDJZAjETpWMqqkdTvqmMeFVfai1q8kV8wLPoxezLYdqwSyyNAQzeHPdd6dKWZCgZApVkiZAaZBJZAZCyGAmboThKSjv4ZAFQJZARwLBU8OMuT746'
-});
-
 var commentingTools = require('./comments');
 
 setInterval(poll, 15000);
 
 function poll() {
+  var yents = db.yents();
+  
   for (var i = 0; i < yents.length; ++i) {
     checkFeed(yents[i], 'me/feed?fields=picture,type,story,message,caption,description,place,comments&since=1+minute+ago');
   }
