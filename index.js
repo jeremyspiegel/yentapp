@@ -14,6 +14,10 @@ app.get('/dumpdb', function(req, res) {
   res.json(db.dump());
 });
 
+app.get('/yents', function(req, res) {
+  res.json(db.yents());
+});
+
 app.post('/mothers', bodyParser.urlencoded({extended: false}), function(req, res) {
   var accessToken = req.body.access_token;
   if (accessToken === undefined) {
